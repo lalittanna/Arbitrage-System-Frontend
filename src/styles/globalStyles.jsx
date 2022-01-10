@@ -2,18 +2,20 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     body{
-        background: ${({ theme }) => theme.body};
-        color: ${({ theme }) => theme.text};
-        transition: all .5s linear;
+      padding: 0;
+      margin: 0;
+      background: ${({ theme }) => theme.body};
+      color: ${({ theme }) => theme.text};
+      transition: all .5s linear;
     }
 `;
 
 export const lightTheme = {
-  body: "#fff",
-  text: "#121212",
+  body: "#aec0e3",
+  text: "#0f1425",
 };
 
 export const darkTheme = {
-  body: "#121212",
-  text: "#fff",
+  body: "#0f1425",
+  text: "#aec0e3",
 };
