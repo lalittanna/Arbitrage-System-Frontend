@@ -20,4 +20,3 @@ const Welcome = () => {
 };
 
 export default Welcome;
-//#2952e3
