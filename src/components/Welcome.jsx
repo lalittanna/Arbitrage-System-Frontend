@@ -2,7 +2,7 @@ const Welcome = () => {
   return (
     <div className="flex w-full justify-center items-center">
       <div className="flex md:flex-row flex-col items-center justify-between md:p-20 py-12 px-4">
-        <div className="flex flex-auto items-center flex-col md:mr-10">
+        <div className="flex flex-auto items-center flex-col">
           <h1 className="text-4xl sm:text-6xl py-1 text-center font-bold">
             DeFi Arbitrage System
           </h1>
