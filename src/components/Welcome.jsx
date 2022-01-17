@@ -1,3 +1,5 @@
+import { Card } from "./Card";
+
 const Welcome = () => {
   return (
     <div className="flex w-full justify-center items-center">
@@ -10,9 +12,17 @@ const Welcome = () => {
             Arbitrage cryptocurriences on the leading decentralized trading
             protocols.
           </p>
-          <button className="flex flex-row justify-center items-center text-center text-black font-bold bg-[#00ffd4] py-2 px-7 mx-4 my-12 rounded-full cursor-pointer hover:bg-[#2546bd]">
+          <button className="flex flex-row justify-center items-center text-center text-black font-bold bg-[#00ffd4] py-2 px-7 mx-4 my-12 rounded-full cursor-pointer hover:bg-[#3399ff] drop-shadow-2xl">
             Launch App
           </button>
+          <Card
+            pairName="DAI/ETH"
+            blockStamp="111"
+            priceUniswap="3000"
+            priceSushiswap="3030"
+            tradeDirection="UNI-SUSHI"
+            priceDifference="0.6%"
+          />
         </div>
       </div>
     </div>
