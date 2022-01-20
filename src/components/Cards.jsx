@@ -8,7 +8,7 @@ const addCard = (cardDetails) => {
   state.cards.push(cardDetails);
 };
 
-export const Cards = () => {
+const Cards = () => {
   return (
     <div className="space-y-4">
       {state.cards.map((card) => (
@@ -35,3 +35,5 @@ addCard({
   tradeDirection: "UNI-SUSHI",
   priceDifference: "0.6%",
 });
+
+export default Cards;
