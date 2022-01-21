@@ -10,7 +10,7 @@ const addCard = (cardDetails) => {
 
 const Cards = () => {
   return (
-    <div className="space-y-4">
+    <div className="flex w-full grid grid-cols-1 justify-center place-items-center gap-4 md:p-20">
       {state.cards.map((card) => (
         <Card
           key={card.id}
