@@ -1,39 +1,39 @@
 import { Card } from "./Card";
+import io from "socket.io-client";
+import { useState } from "react";
 
-const state = {
-  cards: [],
-};
-
-const addCard = (cardDetails) => {
-  state.cards.push(cardDetails);
-};
+const socket = io("http://localhost:8000");
 
 const Cards = () => {
+  const [cards, setCards] = useState([]);
+
+  socket.on("new-entry", (entry) => {
+    addCard(entry);
+  });
+
+  const addCard = (cardDetails) => {
+    setCards([...cards, cardDetails]);
+    console.log(cards);
+  };
+
   return (
-    <div className="flex w-full grid grid-cols-1 justify-center place-items-center gap-4 md:p-20">
-      {state.cards.map((card) => (
+    <div
+      id="cards-container"
+      className="flex w-full grid grid-cols-1 justify-center place-items-center gap-4 md:p-20"
+    >
+      {cards.map((cs) => (
         <Card
-          key={card.id}
-          pairName={card.pairName}
-          blockStamp={card.blockStamp}
-          priceUniswap={card.priceUniswap}
-          priceSushiswap={card.priceSushiswap}
-          tradeDirection={card.tradeDirection}
-          priceDifference={card.priceDifference}
+          key={cs.id}
+          pairName={cs.pairName}
+          blockStamp={cs.blockStamp}
+          priceUniswap={cs.priceUniswap}
+          priceSushiswap={cs.priceSushiswap}
+          tradeDirection={cs.tradeDirection}
+          priceDifference={cs.priceDifference}
         />
       ))}
     </div>
   );
 };
-
-addCard({
-  id: 4,
-  pairName: "DAI/ETH",
-  blockStamp: "111",
-  priceUniswap: "3000",
-  priceSushiswap: "3030",
-  tradeDirection: "UNI-SUSHI",
-  priceDifference: "0.6%",
-});
 
 export default Cards;
