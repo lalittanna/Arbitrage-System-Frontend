@@ -5,12 +5,18 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/app" element={<Cards />} />
-      </Routes>
-      <Footer />
+      <div className="relative min-h-screen">
+        <div className="pb-10">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/app" element={<Cards />} />
+          </Routes>
+        </div>
+        <div className="absolute bottom-0 w-full h-10">
+          <Footer />
+        </div>
+      </div>
     </Router>
   );
 };
